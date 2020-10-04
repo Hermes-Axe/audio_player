@@ -1,0 +1,116 @@
+#audio-box{
+    height: 100px;
+    background-color: #eee;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 3px 6px 4px rgba(0,0,0,0.4);
+    position: fixed;
+    bottom: 60px;
+    display: flex;
+}
+#audio-box .audio-poster{
+    width: 100px;
+    height: 100%;
+    background-color: #fff;
+}
+#audio-box .audio-poster img{
+    width:90px;
+    height: 90px;
+    padding: 5px;
+}
+#audio-box .audio-ctrl{
+    width: 180px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+#audio-box .audio-ctrl .audio-desc{
+    display: block;
+    width: 180px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding: 0 8px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#audio-box .audio-ctrl .audio-desc::selection{
+    background-color: transparent;
+}
+#audio-box .audio-ctrl .ctrl-bar{
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+}
+#audio-box .audio-ctrl .ctrl-bar .audio-btn{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+#audio-box .arrow{
+    width: 42px;
+    height: 100%;
+    background-color: #eee;
+    border-radius: 0 4px 4px 0;
+    padding: 29px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#audio-box .arrow:hover{
+    background-color: #fff;
+}
+
+/* 播放时的样式 海报旋转 */
+#audio-box .audio-poster img.poster-move{
+    border-radius: 50%;
+    background-color: #eee;
+    animation: posterRote 8s linear infinite;
+    transition: all 0.3s;
+}
+@keyframes posterRote{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+/* 进度条样式 */
+#audio-box .progress-bar-box{
+    width: 160px;
+    height: 3px;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin: 0 6px;
+    border-radius: 2px;
+    position: relative;
+}
+#audio-box .progress-bar-box .progress-bar{
+    display: inline-block;
+    border-radius: 2px 0 0 2px;
+    /* width: 10%; */
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#audio-box .progress-circle{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #000;
+    box-shadow: 0 0 6px #000;
+    position: absolute;
+    top: -3.5px;
+    left: 0;
+}
+#audio-box .progress-circle:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 8px #000;
+}
